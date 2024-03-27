@@ -15,6 +15,9 @@
     <description>backend</description>
     <properties>
         <java.version>21</java.version>
+        <sonar.organization>raffael-hu</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.projectName>FullStack-Demo Backend</sonar.projectName>
     </properties>
     <dependencies>
         <dependency>
