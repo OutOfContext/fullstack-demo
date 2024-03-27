@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/static/index.html
+/src/main/resources/static/assets/index-DiwrgTda.css
+/src/main/resources/static/assets/index-MJNRYYyu.js
+/src/main/resources/static/assets/react-CHdo91hT.svg
+/src/main/resources/static/vite.svg
