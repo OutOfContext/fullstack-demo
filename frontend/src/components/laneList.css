@@ -1,0 +1,6 @@
+.lane-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2px 16px;
+}
