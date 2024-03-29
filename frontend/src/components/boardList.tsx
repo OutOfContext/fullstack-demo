@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import BoardComponent from "./board.tsx";
-import {DragDropContext, Droppable, Draggable, DragDropContextProps} from 'react-beautiful-dnd';
+import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
 import {Board} from "../types.ts";
 
 export default function BoardList() {
@@ -18,7 +18,7 @@ export default function BoardList() {
             })
     }, []);
 
-    const onDragEnd = (result) => {
+    const onDragEnd = (result: any) => {
         //console.log("DragEnd activated.")
         if (!result.destination) return;
 
