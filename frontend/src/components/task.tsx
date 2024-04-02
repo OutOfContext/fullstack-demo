@@ -1,9 +1,11 @@
 import {Task} from "../types.ts";
 import './task.css';
+
 interface TaskProps {
-    task: Task
+    task: Task;
 }
-export default function TaskComponent({ task }: TaskProps) {
+
+export default function TaskComponent({task}: TaskProps) {
     return (
         <div className="task-card">
             <div className="task-title">{task.title}</div>

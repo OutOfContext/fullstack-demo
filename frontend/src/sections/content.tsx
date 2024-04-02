@@ -1,9 +1,12 @@
-import BoardList from "../components/boardList.tsx";
+import {ComponentType} from "react";
 
-export default function ContentSection(){
+interface ContentProps {
+    Content: ComponentType
+}
+export default function ContentSection({Content}: ContentProps){
     return (
         <div className="content">
-            <BoardList />
+            <Content />
         </div>
     )
 }

@@ -1,14 +1,38 @@
 import {Board} from "../types.ts";
-import LaneList from "./laneList.tsx";
 import './board.css'
+import {useNavigate} from "react-router";
+
 interface BoardProps {
-    board: Board;
+    board: Board | undefined;
 }
 export default function BoardComponent({ board }: BoardProps) {
-    return (
-        <div className="board-card">
-            <div>{board.displayName}</div>
-            <LaneList lanes={board.lanes}/>
-        </div>
-    )
+    const navigate = useNavigate();
+    function calculateTickets(board: Board) {
+        return board.lanes.map((lane) => (
+            lane.taskList.length
+        )).reduceRight((previousValue, currentValue) => previousValue + currentValue);
+    }
+
+    function moveToBoard(id: number) {
+        navigate("/dashboards/"+id);
+    }
+
+    if (board) {
+        return (
+            <div className="board-card">
+                <div className="board-content board-card-title" onClick={() => moveToBoard(board.id)}>{board.displayName}</div>
+                <div className="board-content board-card-stats">
+                    <div className="board-card-text"> Tickets: {calculateTickets(board)} </div>
+                    <div className="board-card-text"> Lanes: {board.lanes?.length} </div>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                No such Board.
+            </div>
+        )
+    }
+
 }

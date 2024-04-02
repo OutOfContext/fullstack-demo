@@ -1,16 +1,15 @@
 import './App.css'
-import HeaderSection from "./sections/header.tsx";
-import FooterSection from "./sections/footer.tsx";
-import ContentSection from "./sections/content.tsx";
+import {Route, Routes} from "react-router";
+import Home from "./pages/home.tsx";
+import DashboardDetails from "./pages/dashboardDetails.tsx";
 
 function App() {
 
     return (
-        <>
-            <HeaderSection />
-            <ContentSection />
-            <FooterSection />
-        </>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/dashboards/:id" element={<DashboardDetails/>}/>
+        </Routes>
     )
 }
 

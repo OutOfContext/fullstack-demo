@@ -1,8 +1,11 @@
 
-export default function HeaderSection() {
+interface HeaderProps {
+    title: string | undefined
+}
+export default function HeaderSection({title}: HeaderProps) {
     return (
         <div className="header">
-            My Header
+            {title}
         </div>
     )
 }

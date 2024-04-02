@@ -4,6 +4,7 @@ import de.neuefische.raffael.backend.model.Board;
 import de.neuefische.raffael.backend.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class BoardController {
     @GetMapping
     public List<Board> fetchAllBoards(){
         return boardService.getAllBoards();
+    }
+
+    @GetMapping("/{id}")
+    public Board fetchBoardById(@PathVariable long id) {
+        return boardService.getBoardWithId(id);
     }
 }
