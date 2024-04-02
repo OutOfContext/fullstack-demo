@@ -14,7 +14,7 @@ export default function LaneComponent({ lane, index }: LaneProps){
             {(provided) => (
                 <div className="lane-box" ref={provided.innerRef} {...provided.droppableProps}>
                     <div className="lane-name">{lane.displayName}</div>
-                    {lane.taskList?.map((task, taskIndex) => (
+                    {lane.taskList?.map((task) => (
                         <Draggable
                             key={task.id.toString()}
                             index={index}
